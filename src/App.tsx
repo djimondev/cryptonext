@@ -19,7 +19,7 @@ function App() {
         <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
           <TopBar onMenuClick={() => setSidebarCollapsed(!sidebarCollapsed)} />
           <div className="flex h-[calc(100vh-4rem)]">
-            <SideNav collapsed={sidebarCollapsed} />
+            <SideNav collapsed={sidebarCollapsed} onToggleCollapse={() => setSidebarCollapsed(!sidebarCollapsed)} />
             <main className="flex-1 overflow-auto">
               <Breadcrumb />
               <Routes>

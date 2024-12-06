@@ -15,9 +15,10 @@ import { SideNavSection } from "./SideNavSection";
 
 interface SideNavProps {
   collapsed: boolean;
+  onToggleCollapse: () => void;
 }
 
-export function SideNav({ collapsed }: SideNavProps) {
+export function SideNav({ collapsed, onToggleCollapse }: SideNavProps) {
   const currentSection = useCurrentSection();
   const sectionItems = currentSection ? sectionMenuItems[currentSection] : [];
   const languageOptions: Language[] = Object.keys(languages) as Language[];
@@ -34,11 +35,28 @@ export function SideNav({ collapsed }: SideNavProps) {
   return (
     !!currentSection && (
       <nav
-        className={clsx("h-full bg-white dark:bg-primary-800 border-r border-gray-200 dark:border-gray-700 transition-all duration-300", {
+        className={clsx("h-full bg-white dark:bg-primary-800 border-r border-gray-200 dark:border-gray-700 transition-all duration-300 relative", {
           "w-64": !collapsed,
           "w-16": collapsed
         })}
       >
+        <button
+          onClick={onToggleCollapse}
+          className={clsx(
+            "absolute -right-4 top-16 p-2 rounded-full bg-white dark:bg-primary-800 border border-gray-200 dark:border-gray-700",
+            "hover:bg-gray-50 dark:hover:bg-primary-700 transition-colors",
+            "transform transition-transform",
+            { "rotate-180": collapsed }
+          )}
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-500 dark:text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+            <path
+              fillRule="evenodd"
+              d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </button>
         <SectionDropdown currentSection={currentSection} collapsed={collapsed} />
         {currentSection === "profile" && (
           <>
