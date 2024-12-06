@@ -1,34 +1,34 @@
-import { BarChart3, FileText, Network, User } from 'lucide-react';
-import { MenuItem } from '../types/common';
+import { BarChart3, FileText, Network, User } from "lucide-react";
+import { MenuItem } from "../types/common";
 
 export const menuItems: MenuItem[] = [
   {
-    id: 'acquisition',
-    label: 'Data Acquisition',
+    id: "acquisition",
+    label: "Data Acquisition",
     icon: Network,
-    path: '/acquisition',
-    requiresAuth: true,
+    path: "/acquisition",
+    requiresAuth: true
   },
   {
-    id: 'visualization',
-    label: 'Visualization',
+    id: "visualization",
+    label: "Visualization",
     icon: BarChart3,
-    path: '/visualization',
-    requiresAuth: true,
+    path: "/visualization",
+    requiresAuth: true
   },
   {
-    id: 'reporting',
-    label: 'Reporting',
+    id: "reporting",
+    label: "Reporting",
     icon: FileText,
-    path: '/reporting',
-    requiresAuth: true,
+    path: "/reporting",
+    requiresAuth: true
   },
   {
-    id: 'profile',
-    label: 'Profile',
+    id: "profile",
+    label: "Profile",
     icon: User,
-    path: '/profile',
+    path: "/profile",
     requiresAuth: true,
     isSecondary: true
-  },
+  }
 ];

@@ -1,7 +1,7 @@
-import clsx from 'clsx';
-import { ChevronDown } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import clsx from "clsx";
+import { ChevronDown } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface DropdownItem {
   id: string;
@@ -26,8 +26,8 @@ export function Dropdown({ items, label }: DropdownProps) {
       }
     }
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   return (
@@ -38,14 +38,14 @@ export function Dropdown({ items, label }: DropdownProps) {
       >
         <span>{label}</span>
         <ChevronDown
-          className={clsx('w-4 h-4 transition-transform', {
-            'transform rotate-180': isOpen,
+          className={clsx("w-4 h-4 transition-transform", {
+            "transform rotate-180": isOpen
           })}
         />
       </button>
       {isOpen && (
         <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-primary-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-1 z-50">
-          {items.map((item) => (
+          {items.map(item => (
             <button
               key={item.id}
               onClick={() => {

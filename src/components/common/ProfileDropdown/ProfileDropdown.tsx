@@ -1,16 +1,16 @@
-import clsx from 'clsx';
-import { ChevronDown, User } from 'lucide-react';
-import { useEffect, useRef, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
-import { languages } from '../../../constants/languages';
-import { sectionMenuItems } from '../../../constants/sectionMenuItems';
-import { useLanguage } from '../../../hooks/useLanguage';
-import { useTheme } from '../../../hooks/useTheme';
-import type { Language, Theme } from '../../../types/common';
-import { ColorPaletteSection } from './ColorPaletteSection';
-import { LanguageOption } from './LanguageOption';
-import { ThemeOption } from './ThemeOption';
+import clsx from "clsx";
+import { ChevronDown, User } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import { languages } from "../../../constants/languages";
+import { sectionMenuItems } from "../../../constants/sectionMenuItems";
+import { useLanguage } from "../../../hooks/useLanguage";
+import { useTheme } from "../../../hooks/useTheme";
+import type { Language, Theme } from "../../../types/common";
+import { ColorPaletteSection } from "./ColorPaletteSection";
+import { LanguageOption } from "./LanguageOption";
+import { ThemeOption } from "./ThemeOption";
 
 export function ProfileDropdown() {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,14 +27,14 @@ export function ProfileDropdown() {
       }
     }
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const themeOptions: { value: Theme; label: string }[] = [
-    { value: 'light', label: 'Light' },
-    { value: 'dark', label: 'Dark' },
-    { value: 'system', label: 'System' },
+    { value: "light", label: "Light" },
+    { value: "dark", label: "Dark" },
+    { value: "system", label: "System" }
   ];
 
   const languageOptions: Language[] = Object.keys(languages) as Language[];
@@ -46,12 +46,12 @@ export function ProfileDropdown() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center gap-2 p-2 text-primary-700 dark:text-primary-200 hover:bg-primary-100 dark:hover:bg-primary-700 rounded-lg transition-colors"
-        aria-label={t('common.profile')}
+        aria-label={t("common.profile")}
       >
         <User className="w-5 h-5" />
         <ChevronDown
-          className={clsx('w-4 h-4 transition-transform', {
-            'transform rotate-180': isOpen,
+          className={clsx("w-4 h-4 transition-transform", {
+            "transform rotate-180": isOpen
           })}
         />
       </button>
@@ -68,13 +68,8 @@ export function ProfileDropdown() {
           <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
             <p className="text-sm font-medium text-primary-700 dark:text-primary-300 mb-2">Language</p>
             <div className="space-y-1">
-              {languageOptions.map((option) => (
-                <LanguageOption
-                  key={option}
-                  value={option}
-                  isSelected={language === option}
-                  onClick={() => setLanguage(option)}
-                />
+              {languageOptions.map(option => (
+                <LanguageOption key={option} value={option} isSelected={language === option} onClick={() => setLanguage(option)} />
               ))}
             </div>
           </div>
@@ -82,7 +77,7 @@ export function ProfileDropdown() {
           <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
             <p className="text-sm font-medium text-primary-700 dark:text-primary-300 mb-2">Theme</p>
             <div className="space-y-1">
-              {themeOptions.map((option) => (
+              {themeOptions.map(option => (
                 <ThemeOption
                   key={option.value}
                   value={option.value}
@@ -95,7 +90,7 @@ export function ProfileDropdown() {
           </div>
 
           <div className="py-1">
-            {profileMenuItems.map((item) => (
+            {profileMenuItems.map(item => (
               <button
                 key={item.id}
                 onClick={() => {

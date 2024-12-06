@@ -1,7 +1,7 @@
-import { Menu } from 'lucide-react';
-import { useCurrentSection } from '../../../hooks/useCurrentSection';
-import { Logo } from '../../common/Logo/Logo';
-import { ProfileDropdown } from '../../common/ProfileDropdown/ProfileDropdown';
+import { Menu } from "lucide-react";
+import { useCurrentSection } from "../../../hooks/useCurrentSection";
+import { Logo } from "../../common/Logo/Logo";
+import { ProfileDropdown } from "../../common/ProfileDropdown/ProfileDropdown";
 
 interface TopBarProps {
   onMenuClick: () => void;
@@ -19,9 +19,10 @@ export function TopBar({ onMenuClick }: TopBarProps) {
               onClick={onMenuClick}
               className="p-2 hover:bg-primary-100 dark:hover:bg-primary-700 rounded-lg transition-colors"
               aria-label="Toggle sidebar"
-              >
-                <Menu className="w-6 h-6 text-primary-600 dark:text-primary-400" />
-              </button>)}
+            >
+              <Menu className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+            </button>
+          )}
           <Logo />
         </div>
         <ProfileDropdown />

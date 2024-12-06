@@ -1,11 +1,11 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Breadcrumb } from './components/common/Breadcrumb/Breadcrumb';
-import { SideNav } from './components/layout/SideNav/SideNav';
-import { TopBar } from './components/layout/TopBar/TopBar';
-import { useColorPaletteEffect } from './hooks/useColorPalette';
-import { Home } from './pages/Home/Home';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Breadcrumb } from "./components/common/Breadcrumb/Breadcrumb";
+import { SideNav } from "./components/layout/SideNav/SideNav";
+import { TopBar } from "./components/layout/TopBar/TopBar";
+import { useColorPaletteEffect } from "./hooks/useColorPalette";
+import { Home } from "./pages/Home/Home";
 
 const queryClient = new QueryClient();
 
