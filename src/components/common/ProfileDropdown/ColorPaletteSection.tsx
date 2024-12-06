@@ -17,7 +17,8 @@ export function ColorPreview({ colors, isSelected, onClick, name, collapsed }: C
       onClick={onClick}
       className={clsx(
         "w-full flex items-center gap-3 px-2 py-2 rounded-md transition-colors",
-        isSelected ? "bg-primary-50 dark:bg-gray-900/20" : "hover:bg-primary-100 dark:hover:bg-primary-700"
+        isSelected ? "bg-primary-50 dark:bg-gray-900/20" : "hover:bg-primary-100 dark:hover:bg-primary-700",
+        collapsed && "px-[6px]"
       )}
       aria-label={`Select ${name} theme`}
     >
@@ -25,7 +26,7 @@ export function ColorPreview({ colors, isSelected, onClick, name, collapsed }: C
         {colors.map((color, index) => (
           <div
             key={index}
-            className={clsx("w-4 h-4 rounded-sm first:rounded-l-md last:rounded-r-md", collapsed && "w-2 h-2")}
+            className={clsx("w-4 h-4 rounded-sm first:rounded-l-md last:rounded-r-md", collapsed && "w-[5px] h-[5px]")}
             style={{ backgroundColor: color }}
           />
         ))}
