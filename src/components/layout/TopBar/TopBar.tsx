@@ -1,14 +1,7 @@
-import { useCurrentSection } from "../../../hooks/useCurrentSection";
 import { Logo } from "../../common/Logo/Logo";
 import { ProfileDropdown } from "../../common/ProfileDropdown/ProfileDropdown";
 
-interface TopBarProps {
-  onMenuClick: () => void;
-}
-
-export function TopBar({ onMenuClick }: TopBarProps) {
-  const currentSection = useCurrentSection();
-
+export function TopBar() {
   return (
     <header className="h-16 bg-white dark:bg-primary-800 border-b border-gray-200 dark:border-gray-700 px-4">
       <div className="h-full flex items-center justify-between">
