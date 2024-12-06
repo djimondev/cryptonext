@@ -8,9 +8,9 @@ import { sectionMenuItems } from '../../../constants/sectionMenuItems';
 import { useLanguage } from '../../../hooks/useLanguage';
 import { useTheme } from '../../../hooks/useTheme';
 import type { Language, Theme } from '../../../types/common';
+import { ColorPaletteSection } from './ColorPaletteSection';
 import { LanguageOption } from './LanguageOption';
 import { ThemeOption } from './ThemeOption';
-import { ColorPaletteSection } from './ColorPaletteSection';
 
 export function ProfileDropdown() {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,7 +45,7 @@ export function ProfileDropdown() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 p-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
+        className="flex items-center gap-2 p-2 text-primary-700 dark:text-primary-200 hover:bg-primary-100 dark:hover:bg-primary-700 rounded-lg transition-colors"
         aria-label={t('common.profile')}
       >
         <User className="w-5 h-5" />
@@ -57,16 +57,16 @@ export function ProfileDropdown() {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50">
+        <div className="absolute right-0 mt-2 w-64 bg-white dark:bg-primary-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-2 z-50">
           <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
-            <p className="text-sm font-medium text-gray-900 dark:text-white">John Doe</p>
-            <p className="text-sm text-gray-500 dark:text-gray-400">john.doe@example.com</p>
+            <p className="text-sm font-medium text-primary-900 dark:text-white">John Doe</p>
+            <p className="text-sm text-primary-500 dark:text-primary-400">john.doe@example.com</p>
           </div>
 
           <ColorPaletteSection />
 
           <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
-            <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Language</p>
+            <p className="text-sm font-medium text-primary-700 dark:text-primary-300 mb-2">Language</p>
             <div className="space-y-1">
               {languageOptions.map((option) => (
                 <LanguageOption
@@ -80,7 +80,7 @@ export function ProfileDropdown() {
           </div>
 
           <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
-            <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Theme</p>
+            <p className="text-sm font-medium text-primary-700 dark:text-primary-300 mb-2">Theme</p>
             <div className="space-y-1">
               {themeOptions.map((option) => (
                 <ThemeOption
@@ -102,7 +102,7 @@ export function ProfileDropdown() {
                   navigate(item.path);
                   setIsOpen(false);
                 }}
-                className="w-full flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+                className="w-full flex items-center gap-2 px-4 py-2 text-sm text-primary-700 dark:text-primary-200 hover:bg-primary-100 dark:hover:bg-primary-700"
               >
                 <item.icon className="w-4 h-4" />
                 {item.label}

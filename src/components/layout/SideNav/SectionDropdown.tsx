@@ -43,14 +43,14 @@ const currentSectionData = [...primarySections, ...secondarySections].find(
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={clsx(
-          'text-sm w-full flex items-center px-4 py-3 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors border-b border-gray-200 dark:border-gray-700',
+          'text-sm w-full flex items-center px-4 py-3 text-primary-700 dark:text-primary-200 hover:bg-primary-100 dark:hover:bg-primary-700 transition-colors border-b border-gray-200 dark:border-gray-700',
           { 'justify-center': collapsed }
         )}
       >
         <currentSectionData.icon className="w-5 h-5 flex-shrink-0" />
         {!collapsed && (
           <>
-            <span className="ml-3 flex-1">{currentSectionData.label}</span>
+            <span className="ml-3 flex-1 text-gray-700 dark:text-gray-300">{currentSectionData.label}</span>
             <ChevronDown
               className={clsx('w-4 h-4 transition-transform', {
                 'transform rotate-180': isOpen,
@@ -60,7 +60,7 @@ const currentSectionData = [...primarySections, ...secondarySections].find(
         )}
       </button>
       {isOpen && !collapsed && (
-        <div className="absolute top-full left-0 w-full bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-b-lg z-50">
+        <div className="absolute top-full left-0 w-full bg-white dark:bg-primary-800 shadow-lg border border-gray-200 dark:border-gray-700 rounded-b-lg z-50">
           {primarySections.map((section) => (
             <button
               key={section.id}
@@ -69,14 +69,14 @@ const currentSectionData = [...primarySections, ...secondarySections].find(
                 setIsOpen(false);
               }}
               className={clsx(
-                'text-sm w-full flex items-center gap-3 px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors',
+                'text-sm w-full flex items-center gap-3 px-4 py-2 text-primary-700 dark:text-primary-200 hover:bg-primary-100 dark:hover:bg-primary-700 transition-colors',
                 {
-                  'bg-gray-100 dark:bg-gray-700': section.id === currentSection,
+                  'bg-primary-100 dark:bg-primary-700': section.id === currentSection,
                 }
               )}
             >
               <section.icon className={`${getIconClasses(collapsed)} flex-shrink-0`} />
-              <span>{section.label}</span>
+              <span className="text-gray-700 dark:text-gray-300">{section.label}</span>
             </button>
           ))}
           <div className="border-t border-gray-200 dark:border-gray-700">
@@ -88,14 +88,14 @@ const currentSectionData = [...primarySections, ...secondarySections].find(
                 setIsOpen(false);
               }}
               className={clsx(
-                'text-sm w-full flex items-center gap-3 px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors',
+                'text-sm w-full flex items-center gap-3 px-4 py-2 text-primary-700 dark:text-primary-200 hover:bg-primary-100 dark:hover:bg-primary-700 transition-colors',
                 {
-                  'bg-gray-100 dark:bg-gray-700': section.id === currentSection,
+                  'bg-primary-100 dark:bg-primary-700': section.id === currentSection,
                 }
               )}
             >
               <section.icon className={`${getIconClasses(collapsed)} flex-shrink-0`} />
-              <span>{section.label}</span>
+              <span className="text-gray-700 dark:text-gray-300">{section.label}</span>
             </button>
           ))}
           </div>

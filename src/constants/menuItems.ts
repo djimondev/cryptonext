@@ -1,5 +1,5 @@
+import { BarChart3, FileText, Network, User } from 'lucide-react';
 import { MenuItem } from '../types/common';
-import { BarChart3, Network, FileText, User } from 'lucide-react';
 
 export const menuItems: MenuItem[] = [
   {

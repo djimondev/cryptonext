@@ -12,14 +12,14 @@ export function ThemeSwitcher() {
   ];
 
   return (
-    <div className="flex items-center gap-1 bg-gray-100 dark:bg-gray-700 rounded-lg p-1">
+    <div className="flex items-center gap-1 bg-primary-100 dark:bg-primary-700 rounded-lg p-1">
       {themes.map(({ value, icon }) => (
         <button
           key={value}
           onClick={() => setTheme(value)}
           className={`p-2 rounded-md ${
             theme === value
-              ? 'bg-white dark:bg-gray-600 shadow-sm'
+              ? 'bg-white dark:bg-primary-600 shadow-sm'
               : 'text-gray-600 dark:text-gray-300'
           }`}
         >

@@ -1,8 +1,8 @@
+import { useEffect } from 'react';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import { colorPalettes } from '../constants/colorPalettes';
 import type { ColorPalette } from '../constants/colorPalettes';
-import { useEffect } from 'react';
+import { colorPalettes } from '../constants/colorPalettes';
 
 interface ColorPaletteStore {
   currentPalette: ColorPalette;

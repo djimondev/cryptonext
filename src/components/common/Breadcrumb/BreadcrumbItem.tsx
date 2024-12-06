@@ -14,8 +14,8 @@ export function BreadcrumbItem({ label, path, isLast }: BreadcrumbItemProps) {
       className={clsx(
         'max-w-[200px] truncate',
         isLast
-          ? 'text-gray-900 dark:text-white font-medium'
-          : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'
+          ? 'text-primary-900 dark:text-white font-medium'
+          : 'text-primary-600 dark:text-primary-400 hover:text-primary-900 dark:hover:text-white'
       )}
     >
       {label}
@@ -24,9 +24,9 @@ export function BreadcrumbItem({ label, path, isLast }: BreadcrumbItemProps) {
 
   return (
     <li className="flex items-center">
-      <ChevronRight className="w-4 h-4 mx-2 text-gray-400 dark:text-gray-600 flex-shrink-0" />
+      <ChevronRight className="w-4 h-4 mx-2 text-primary-400 dark:text-primary-600 flex-shrink-0" />
       {isLast ? (
-        <span aria-current="page">{content}</span>
+        <span aria-current="page" className="text-primary-600 dark:text-primary-400">{content}</span>
       ) : (
         <Link to={path || '#'} className="hover:underline">
           {content}

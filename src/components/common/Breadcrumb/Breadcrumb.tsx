@@ -1,6 +1,6 @@
 import { Home } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
 import { useMemo } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { menuItems } from '../../../constants/menuItems';
 import { sectionMenuItems } from '../../../constants/sectionMenuItems';
 import { BreadcrumbItem } from './BreadcrumbItem';
@@ -59,7 +59,7 @@ export function Breadcrumb() {
         <li className="flex items-center">
           <Link
             to="/"
-            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
+            className="text-primary-600 dark:text-primary-400 hover:text-primary-900 dark:hover:text-white"
             aria-label="Home"
           >
             <Home className="w-4 h-4" />

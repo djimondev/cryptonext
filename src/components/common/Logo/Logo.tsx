@@ -1,4 +1,3 @@
-
 import { Activity } from 'lucide-react';
 
 export function Logo() {
@@ -6,8 +5,8 @@ export function Logo() {
     <div className="flex items-center gap-2">
       <a href="/">
         <div className="flex items-center gap-2">
-      <Activity className="w-6 h-6 text-blue-600" />
-      <span className="text-lg font-semibold text-gray-900 dark:text-white">
+      <Activity className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+      <span className="text-lg font-semibold text-foreground">
         CryptoNext
           </span>
         </div>

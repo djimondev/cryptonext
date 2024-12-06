@@ -17,16 +17,16 @@ export function SideNavSection({ items, collapsed }: SideNavSectionProps) {
           to={item.path}
           className={({ isActive }) =>
             clsx(
-              'flex items-center gap-3 px-4 py-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors',
+              'flex items-center gap-3 px-4 py-2 text-primary-600 dark:text-primary-300 hover:bg-primary-100 dark:hover:bg-primary-700 transition-colors',
               {
-                'bg-gray-100 dark:bg-gray-700': isActive,
+                'bg-primary-50 dark:bg-gray-900/20': isActive,
               }
             )
           }
         >
           <item.icon className={`${getIconClasses(collapsed)} flex-shrink-0`} />
           {!collapsed && (
-            <span className="truncate">{item.label}</span>
+            <span className="truncate text-gray-700 dark:text-gray-300">{item.label}</span>
           )}
         </NavLink>
       ))}

@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { ChevronDown } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
 import clsx from 'clsx';
+import { ChevronDown } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface DropdownItem {
   id: string;
@@ -34,7 +34,7 @@ export function Dropdown({ items, label }: DropdownProps) {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
+        className="flex items-center gap-2 px-4 py-2 text-primary-700 dark:text-primary-200 hover:bg-primary-100 dark:hover:bg-primary-700 rounded-lg transition-colors"
       >
         <span>{label}</span>
         <ChevronDown
@@ -44,7 +44,7 @@ export function Dropdown({ items, label }: DropdownProps) {
         />
       </button>
       {isOpen && (
-        <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-gray-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-1 z-50">
+        <div className="absolute top-full left-0 mt-2 w-56 bg-white dark:bg-primary-800 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 py-1 z-50">
           {items.map((item) => (
             <button
               key={item.id}
@@ -52,7 +52,7 @@ export function Dropdown({ items, label }: DropdownProps) {
                 navigate(item.path);
                 setIsOpen(false);
               }}
-              className="w-full text-left px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+              className="w-full text-left px-4 py-2 text-primary-700 dark:text-primary-200 hover:bg-primary-100 dark:hover:bg-primary-700 transition-colors"
             >
               {item.label}
             </button>
