@@ -47,7 +47,7 @@ export function ColorPaletteSection() {
     <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
       <div className="flex items-center gap-2 mb-2">
         <Palette className="w-4 h-4 text-primary-500 dark:text-primary-400" />
-        <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+        <span className="text-sm font-medium text-primary-700 dark:text-primary-300">
           Color Theme
         </span>
       </div>

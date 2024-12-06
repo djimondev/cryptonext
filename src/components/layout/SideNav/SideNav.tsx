@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import { Palette } from 'lucide-react';
 import { colorPalettes } from '../../../constants/colorPalettes';
 import { languages } from '../../../constants/languages';
 import { sectionMenuItems } from '../../../constants/sectionMenuItems';
@@ -50,13 +49,9 @@ export function SideNav({ collapsed }: SideNavProps) {
         <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
       <div className="flex items-center gap-2 mb-2">
         {!collapsed && (
-          <>
-                  <Palette className="w-4 h-4 text-primary-500 dark:text-primary-400" />
-
-        <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
+        <span className="text-sm font-medium text-primary-700 dark:text-primary-300">
           Color Theme
         </span>
-        </>
         )}
       </div>
       <div className="space-y-1">
@@ -79,7 +74,7 @@ export function SideNav({ collapsed }: SideNavProps) {
 
         <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
           {!collapsed && (
-            <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 truncate">
+            <p className="text-sm font-medium text-primary-700 dark:text-primary-300 mb-2 truncate">
               Language
             </p>
           )}
@@ -96,7 +91,7 @@ export function SideNav({ collapsed }: SideNavProps) {
             </div>
           </div>
           <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
-            {!collapsed && <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 truncate">Theme</p>}
+            {!collapsed && <p className="text-sm font-medium text-primary-700 dark:text-primary-300 mb-2 truncate">Theme</p>}
             <div className="space-y-1">
               {themeOptions.map((option) => (
                 <ThemeOption
