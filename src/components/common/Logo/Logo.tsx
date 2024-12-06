@@ -6,7 +6,7 @@ export function Logo() {
       <a href="/">
         <div className="flex items-center gap-2">
           <Activity className="w-6 h-6 text-primary-600 dark:text-primary-400" />
-          <span className="text-lg font-semibold text-foreground">CryptoNext</span>
+          <span className="text-lg font-semibold text-gray-700 dark:text-gray-200">CryptoNext</span>
         </div>
       </a>
     </div>
