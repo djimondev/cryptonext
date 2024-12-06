@@ -1,0 +1,16 @@
+{
+  "common": {
+    "dataAcquisition": "Datenerfassung",
+    "visualization": "Visualisierung",
+    "reporting": "Berichterstattung",
+    "settings": "Einstellungen",
+    "profile": "Profil",
+    "signOut": "Abmelden"
+  },
+  "home": {
+    "title": "Netzwerküberwachungs-Dashboard",
+    "dataAcquisitionDesc": "Erfassen und verwalten Sie Netzwerkdaten aus mehreren Quellen",
+    "visualizationDesc": "Verwandeln Sie Ihre Daten in aussagekräftige Erkenntnisse",
+    "reportingDesc": "Erstellen Sie umfassende Netzwerkanalyseberichte"
+  }
+}

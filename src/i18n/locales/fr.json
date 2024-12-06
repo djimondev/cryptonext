@@ -1,0 +1,16 @@
+{
+  "common": {
+    "dataAcquisition": "Acquisition de Données",
+    "visualization": "Visualisation",
+    "reporting": "Rapports",
+    "settings": "Paramètres",
+    "profile": "Profil",
+    "signOut": "Déconnexion"
+  },
+  "home": {
+    "title": "Tableau de Bord de Surveillance Réseau",
+    "dataAcquisitionDesc": "Collectez et gérez les données réseau de plusieurs sources",
+    "visualizationDesc": "Transformez vos données en informations pertinentes",
+    "reportingDesc": "Générez des rapports d'analyse réseau complets"
+  }
+}
