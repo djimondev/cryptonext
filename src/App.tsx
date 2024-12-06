@@ -1,15 +1,17 @@
+import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Breadcrumb } from './components/common/Breadcrumb/Breadcrumb';
-import { SideNav } from './components/layout/SideNav/SideNav';
 import { TopBar } from './components/layout/TopBar/TopBar';
+import { SideNav } from './components/layout/SideNav/SideNav';
+import { Breadcrumb } from './components/common/Breadcrumb/Breadcrumb';
 import { Home } from './pages/Home/Home';
+import { useColorPaletteEffect } from './hooks/useColorPalette';
 
 const queryClient = new QueryClient();
 
 function App() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  useColorPaletteEffect();
 
   return (
     <QueryClientProvider client={queryClient}>

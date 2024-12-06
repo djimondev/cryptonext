@@ -10,6 +10,7 @@ import { useTheme } from '../../../hooks/useTheme';
 import type { Language, Theme } from '../../../types/common';
 import { LanguageOption } from './LanguageOption';
 import { ThemeOption } from './ThemeOption';
+import { ColorPaletteSection } from './ColorPaletteSection';
 
 export function ProfileDropdown() {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,6 +62,8 @@ export function ProfileDropdown() {
             <p className="text-sm font-medium text-gray-900 dark:text-white">John Doe</p>
             <p className="text-sm text-gray-500 dark:text-gray-400">john.doe@example.com</p>
           </div>
+
+          <ColorPaletteSection />
 
           <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
             <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Language</p>

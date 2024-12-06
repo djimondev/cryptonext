@@ -1,6 +1,7 @@
 import { BarChart3, FileText, Network } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { ColorPaletteSwitcher } from '../../components/common/ColorPaletteSwitcher/ColorPaletteSwitcher';
 
 interface NavigationCardProps {
   title: string;
@@ -51,7 +52,7 @@ export function Home() {
 
   return (
     <div className="min-h-[calc(100vh-4rem)] flex flex-col items-center justify-center p-6">
-      <div className="max-w-4xl w-full mx-auto">
+      <div className="max-w-4xl w-full mx-auto space-y-8">
         <h1 className="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-white mb-8">
           {t('home.title')}
         </h1>
@@ -66,6 +67,7 @@ export function Home() {
             />
           ))}
         </div>
+        <ColorPaletteSwitcher />
       </div>
     </div>
   );
