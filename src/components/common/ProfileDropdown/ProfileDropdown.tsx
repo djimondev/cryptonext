@@ -94,12 +94,13 @@ export function ProfileDropdown() {
           <div className="py-1">
             {profileMenuItems.map((item) => (
               <button
+                key={item.id}
                 onClick={() => {
                   navigate(item.path);
                   setIsOpen(false);
                 }}
-              className="w-full flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
-            >
+                className="w-full flex items-center gap-2 px-4 py-2 text-sm text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700"
+              >
                 <item.icon className="w-4 h-4" />
                 {item.label}
               </button>
