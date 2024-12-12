@@ -1,8 +1,8 @@
-import { BarChart2, BarChart3, Clock, Database, File, FileText, Folder, Info, LogOut, MapPin, Network, Palette, Settings, User } from "lucide-react";
+import { Activity, BarChart2, BarChart3, Clock, Database, File, FileText, Folder, Info, LogOut, MapPin, Network, Palette, Settings, User } from "lucide-react";
+import { Overview } from "../pages/Overview/Overview";
 import type { AppRouteConfig } from "../types/routing";
 
 // Placeholder components - replace with actual components
-const Overview = () => <div>Overview</div>;
 const Collectors = () => <div>Collectors</div>;
 const Sensors = () => <div>Sensors</div>;
 const DatabaseView = () => <div>Database</div>;
