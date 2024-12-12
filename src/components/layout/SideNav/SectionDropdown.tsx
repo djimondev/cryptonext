@@ -2,7 +2,7 @@ import clsx from "clsx";
 import { ChevronDown } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { menuItems } from "../../../constants/menuItems";
+import { routeConfig } from "../../../config/routes";
 import { getIconClasses } from "../../../helpers/menuitems.helper";
 
 interface SectionDropdownProps {
@@ -15,8 +15,8 @@ export function SectionDropdown({ currentSection, collapsed }: SectionDropdownPr
   const dropdownRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
 
-  const primarySections = menuItems.filter(item => !item.isSecondary);
-  const secondarySections = menuItems.filter(item => item.isSecondary);
+  const primarySections = routeConfig.sections.filter(item => !item.metadata?.isSecondary);
+  const secondarySections = routeConfig.sections.filter(item => item.metadata?.isSecondary);
 
   const currentSectionData = [...primarySections, ...secondarySections].find(section => section.id === currentSection);
 

@@ -21,4 +21,5 @@ export interface MenuItem {
   path: string;
   requiresAuth?: boolean;
   isSecondary?: boolean;
+  children?: MenuItem[];
 }

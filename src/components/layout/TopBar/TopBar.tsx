@@ -1,5 +1,6 @@
 import { Logo } from "../../common/Logo/Logo";
 import { ProfileDropdown } from "../../common/ProfileDropdown/ProfileDropdown";
+import { SettingsDropdown } from "../../common/SettingsDropdown/SettingsDropdown";
 
 export function TopBar() {
   return (
@@ -8,7 +9,10 @@ export function TopBar() {
         <div className="flex items-center gap-4">
           <Logo />
         </div>
-        <ProfileDropdown />
+        <div className="flex items-center gap-2">
+          <SettingsDropdown />
+          <ProfileDropdown />
+        </div>
       </div>
     </header>
   );

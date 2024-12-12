@@ -4,6 +4,7 @@
 
 @layer base {
   :root {
+    --primary-25: #f5f9ff;
     --primary-50: theme("colors.blue.50");
     --primary-100: theme("colors.blue.100");
     --primary-200: theme("colors.blue.200");
