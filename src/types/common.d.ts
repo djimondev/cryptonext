@@ -1,6 +1,6 @@
 import { LucideIcon } from "lucide-react";
+import { ComponentType } from "react";
 
-export type Theme = "light" | "dark" | "system";
 export type Language = "en" | "fr";
 
 export interface User {
@@ -9,9 +9,13 @@ export interface User {
   email: string;
   role: "admin" | "user";
   preferences: {
-    theme: Theme;
     language: Language;
   };
+}
+
+export interface Sitemap {
+  items: MenuItem[];
+  categories: MenuCategory[];
 }
 
 export interface MenuItem {
@@ -19,7 +23,15 @@ export interface MenuItem {
   label: string;
   icon: LucideIcon;
   path: string;
-  requiresAuth?: boolean;
+  component: ComponentType;
+}
+
+export interface MenuCategory {
+  id: string;
+  path: string;
+  label: string;
+  description: string;
+  icon: LucideIcon;
   isSecondary?: boolean;
-  children?: MenuItem[];
+  items: MenuItem[];
 }
