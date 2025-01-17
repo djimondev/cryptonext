@@ -1,5 +1,5 @@
 # Build stage
-FROM node:18-alpine AS builder
+FROM node:18.19.1-alpine AS builder
 
 WORKDIR /app
 
@@ -19,7 +19,7 @@ COPY tsconfig*.json ./
 RUN npm run build
 
 # Production stage
-FROM nginxinc/nginx-unprivileged
+FROM nginxinc/nginx-unprivileged:1.25.4-alpine
 
 # Copy nginx configuration
 COPY docker/nginx.conf /etc/nginx/nginx.conf
