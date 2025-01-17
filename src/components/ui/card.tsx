@@ -37,7 +37,9 @@ const CardTitle = React.forwardRef<
     ref={ref}
     className={cn('text-xl font-semibold text-card-foreground', className)}
     {...props}
-  />
+  >
+    {props.children}
+  </h3>
 ));
 CardTitle.displayName = 'CardTitle';
 

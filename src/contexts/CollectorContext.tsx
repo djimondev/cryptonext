@@ -39,7 +39,7 @@ export function CollectorProvider({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <CollectorContext.Provider value={{ collectors, addCollector, updateCollector, deleteCollector }}>
+    <CollectorContext.Provider value={React.useMemo(() => ({ collectors, addCollector, updateCollector, deleteCollector }), [collectors])}>
       {children}
     </CollectorContext.Provider>
   );

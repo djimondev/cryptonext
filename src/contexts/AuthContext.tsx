@@ -30,7 +30,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={React.useMemo(() => ({ isAuthenticated, login, logout }), [isAuthenticated])}>
       {children}
     </AuthContext.Provider>
   );
