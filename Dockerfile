@@ -8,13 +8,18 @@ COPY package*.json ./
 RUN npm ci
 
 # Copy source files
-COPY . .
+COPY src/ ./src/
+COPY public/ ./public/
+COPY docker/ ./docker/
+COPY index.html ./
+COPY vite.config.js ./
+COPY tsconfig*.json ./
 
 # Build the app
 RUN npm run build
 
 # Production stage
-FROM nginx:alpine
+FROM nginxinc/nginx-unprivileged
 
 # Copy nginx configuration
 COPY docker/nginx.conf /etc/nginx/nginx.conf
@@ -33,8 +38,8 @@ RUN chmod +x /docker-entrypoint.sh
 ENV API_URL=http://localhost:3000
 ENV ENVIRONMENT=production
 
-# Expose port
-EXPOSE 80
+# Expose port 8080 instead of 80 (unprivileged nginx listens on 8080 by default)
+EXPOSE 8080
 
 # Start Nginx using our entrypoint script
 ENTRYPOINT ["/docker-entrypoint.sh"] 

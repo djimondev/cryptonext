@@ -22,7 +22,7 @@ export function CollectorProvider({ children }: { children: React.ReactNode }) {
   const addCollector = (collector: Omit<Collector, 'id' | 'createdAt'>) => {
     const newCollector: Collector = {
       ...collector,
-      id: Math.random().toString(36).substring(7),
+      id: crypto.randomUUID(),
       createdAt: new Date(),
     };
     setCollectors(prev => [...prev, newCollector]);
